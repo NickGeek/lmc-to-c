@@ -1,21 +1,4 @@
 
-// Clean Instructions
-#undef HLT
-#undef ADD
-#undef SUB
-#undef STA
-#undef STO
-#undef LDA
-#undef BRA
-#undef BRZ
-#undef BRP
-#undef INP
-#undef OUT
-#undef DAT
-#undef DBG
-#undef IST
-#undef OST
-
 // C Imports
 #include <stdio.h>
 #include <stdlib.h>

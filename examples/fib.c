@@ -78,23 +78,6 @@ int memory[MEMORY_SIZE] = {
 #undef one
 #undef newline
 
-// Clean Instructions
-#undef HLT
-#undef ADD
-#undef SUB
-#undef STA
-#undef STO
-#undef LDA
-#undef BRA
-#undef BRZ
-#undef BRP
-#undef INP
-#undef OUT
-#undef DAT
-#undef DBG
-#undef IST
-#undef OST
-
 // C Imports
 #include <stdio.h>
 #include <stdlib.h>
@@ -138,6 +121,8 @@ void branchIfPositive(int cell) {
 }
 
 void io(int cmd) {
+	char input;
+
 	switch (cmd) {
 		case 1:
 			// Input
@@ -151,7 +136,8 @@ void io(int cmd) {
 
 		case 3:
 			// String Input
-			scanf("%c", &cpuRegister);
+			scanf("%c", &input);
+			cpuRegister = (int)input;
 			break;
 
 		case 4:
@@ -195,7 +181,7 @@ void (*functions[10]) (int cell) = {
 };
 
 // Run Program
-int runInstruction() {
+void runInstruction() {
 	int cell = memory[counter];
 
 	// Decode Instruction
