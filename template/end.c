@@ -59,6 +59,8 @@ void branchIfPositive(int cell) {
 }
 
 void io(int cmd) {
+	char input;
+
 	switch (cmd) {
 		case 1:
 			// Input
@@ -72,7 +74,8 @@ void io(int cmd) {
 
 		case 3:
 			// String Input
-			scanf("%c", &cpuRegister);
+			scanf("%c", &input);
+			cpuRegister = (int)input;
 			break;
 
 		case 4:
@@ -116,7 +119,7 @@ void (*functions[10]) (int cell) = {
 };
 
 // Run Program
-int runInstruction() {
+void runInstruction() {
 	int cell = memory[counter];
 
 	// Decode Instruction
